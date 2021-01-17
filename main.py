@@ -1,6 +1,7 @@
 #Step 5
 
 import random
+from replit import clear
 import hangman_words
 from hangman_art import logo, stages
 #TODO-1: - Update the word list to use the 'word_list' from hangman_words.py
@@ -24,14 +25,13 @@ for _ in range(word_length):
 
 while not end_of_game:
     guess = input("Guess a letter: ").lower()
-
-    #TODO-4: - If the user has entered a letter they've already guessed, print the letter and let them know.
+    clear()
     if guess in display:
         print(f"You have already selected letter {guess}")
     #Check guessed letter
     for position in range(word_length):
         letter = chosen_word[position]
-        print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
+ #       print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
         if letter == guess:
             display[position] = letter
 
